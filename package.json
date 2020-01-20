@@ -1,0 +1,27 @@
+{
+  "name": "snackbar",
+  "description": "Snackbar Material Module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:panthershark/snackbar.git"
+  },
+  "scripts": {
+    "elm:build": "elm make ./src/Demo.elm --output=./demo/demo.js",
+    "start": "concurrently \"elm-live ./src/Demo.elm --open --dir=./demo -- --debug --output=./demo/demo.js\" \"yarn run sass:build \" \"yarn run sass:watch \"",
+    "sass:build": "node-sass ./src/snackbar.scss -o ./demo",
+    "sass:autoprefixer": "postcss demo/snackbar.css --use autoprefixer -d demo/",
+    "sass:watch": "chokidar 'src/*.scss' -c 'yarn run sass:build && yarn run sass:autoprefixer'",
+    "build": "yarn install && yarn run elm:build && yarn run sass:build && node version_script.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "chokidar-cli": "^2.1.0",
+    "concurrently": "^5.0.2",
+    "elm-live": "^4.0.1",
+    "node-sass": "^4.13.1",
+    "postcss-cli": "^7.1.0"
+  },
+  "dependencies": {}
+}

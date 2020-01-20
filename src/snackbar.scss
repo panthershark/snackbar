@@ -1,0 +1,52 @@
+// all px pads come from here
+// https://material.io/design/components/snackbars.html#spec
+
+.snackbar {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
+    0 8px 10px -5px rgba(0, 0, 0, 0.3);
+
+  position: fixed;
+  bottom: 23px; // 23 matches materialize FAB.
+  left: 4px;
+  background-color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 2s;
+  width: 344px;
+  min-height: 48px;
+  padding: 0 8px 0 16px;
+
+  @media only screen and (min-width: 380px) {
+    left: 23px;
+  }
+
+  &.sb_message,
+  &.sb_with_action {
+    opacity: 1;
+  }
+
+  &.sb_hidden {
+    display: none;
+  }
+
+  span,
+  a {
+    color: #fff;
+    margin: auto 0;
+    padding: 8px 0;
+  }
+
+  &.sb_with_action {
+    span {
+      width: 344px-64px;
+    }
+    .sb_action {
+      color: #64b5f6;
+      cursor: pointer;
+      width: 64px;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
