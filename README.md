@@ -1,5 +1,5 @@
 # Snackbar 
-A material design snackbar written in elm.  [See the demo](https://doanythingfordethklok.github.io/snackbar/demo/index.html)
+A material design snackbar written in elm.  [See the demo](https://panthershark.github.io/snackbar/demo/index.html)
 
 # How to create a snackbar
 
